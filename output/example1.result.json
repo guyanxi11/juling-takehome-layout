@@ -1,0 +1,62 @@
+{
+  "feasible": true,
+  "message": "可行（step=1000000000.0, deep=False, interior=False, nodes=9）",
+  "placements": {
+    "fridge": {
+      "center": [
+        6456.2357,
+        31136.4897
+      ],
+      "rotation": -90.0
+    },
+    "iceMaker": {
+      "center": [
+        6696.2357,
+        29846.4897
+      ],
+      "rotation": -90.0
+    },
+    "shelf-1": {
+      "center": [
+        6295.935,
+        28942.6597
+      ],
+      "rotation": 179.9746
+    },
+    "shelf-2": {
+      "center": [
+        5363.1188,
+        29828.8439
+      ],
+      "rotation": 105.852
+    },
+    "shelf-3": {
+      "center": [
+        4752.8941,
+        31977.8859
+      ],
+      "rotation": 105.852
+    },
+    "overShelf-1": {
+      "center": [
+        5089.9654,
+        30790.8144
+      ],
+      "rotation": 105.852
+    },
+    "overShelf-2": {
+      "center": [
+        5343.983,
+        32457.0669
+      ],
+      "rotation": 15.852
+    },
+    "overShelf-3": {
+      "center": [
+        5921.1653,
+        32620.959
+      ],
+      "rotation": 15.852
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "feasible": true,
+  "message": "可行（step=1000000000.0, deep=False, interior=False, nodes=3327）",
+  "placements": {
+    "fridge": {
+      "center": [
+        29766.3885,
+        34304.5295
+      ],
+      "rotation": -180.0
+    },
+    "shelf-1": {
+      "center": [
+        31395.8885,
+        33875.6321
+      ],
+      "rotation": 90.0
+    },
+    "shelf-2": {
+      "center": [
+        31096.3885,
+        34769.5295
+      ],
+      "rotation": -180.0
+    },
+    "shelf-3": {
+      "center": [
+        29193.8885,
+        33005.0295
+      ],
+      "rotation": -90.0
+    },
+    "shelf-4": {
+      "center": [
+        29493.3885,
+        32200.5295
+      ],
+      "rotation": 0.0
+    },
+    "overShelf-1": {
+      "center": [
+        30696.3885,
+        32200.5295
+      ],
+      "rotation": 0.0
+    },
+    "overShelf-2": {
+      "center": [
+        31296.3885,
+        32240.5295
+      ],
+      "rotation": 0.0
+    },
+    "overShelf-3": {
+      "center": [
+        31395.8885,
+        32940.0295
+      ],
+      "rotation": 90.0
+    }
+  }
+}
