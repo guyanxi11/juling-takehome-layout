@@ -1,5 +1,33 @@
 # 居灵 TakeHome：轮廓内矩形物体摆放
 
+给定房间轮廓和若干矩形物体（冰箱 / 货架 / 离地架 / 制冰机），在轮廓内贴墙摆放：不重叠、不挡门、冰箱开门边不放东西。
+
+## 运行方式
+
+环境：Python 3.10+（在 Windows / Python 3.12 下验证通过）
+
+```bash
+git clone https://github.com/guyanxi11/juling-takehome-layout.git
+cd juling-takehome-layout
+python -m pip install -r requirements.txt
+python main.py --all
+```
+
+只跑某一个输入：
+
+```bash
+python main.py example1.json
+```
+
+结果在 `output/`：
+
+- `exampleN.result.json`：是否可行，以及每个物体的中心点、旋转角  
+- `exampleN.png`：摆放示意图  
+
+依赖见 `requirements.txt`：`shapely`、`matplotlib`、`numpy`。
+
+---
+
 ## 1. AI 使用说明
 
 本题鼓励使用 AI 工具。本次作答使用情况如下：
@@ -60,53 +88,15 @@
 
 ---
 
-## 3. 运行环境及运行方式
+## 3. 既定输入的输出示例
 
-- Python 3.10+（在 Windows / Python 3.12 下验证通过）  
-- 依赖：`shapely`、`matplotlib`、`numpy`
-
-```bash
-cd 居灵-TakeHome工程题
-python -m pip install -r requirements.txt
-
-# 跑全部示例（推荐）
-python main.py --all
-
-# 跑单个输入
-python main.py example1.json
-
-# 只要 JSON、不要 PNG
-python main.py example3.json --no-viz
-```
-
-结果写到 `output/`：
-
-- `exampleN.result.json`：是否可行 + 每个物体的中心点与旋转角  
-- `exampleN.png`：轮廓 / 门禁区 / 摆放示意  
-
-自行换输入时，JSON 字段与题目示例相同：
-
-```json
-{
-  "boundary": [[x, y], "..."],
-  "door": [[x1, y1], [x2, y2]],
-  "isOpenInward": false,
-  "algoToPlace": {
-    "fridge": [1220, 1330],
-    "shelf-1": [1000, 400]
-  }
-}
-```
-
----
-
-## 4. 既定输入的输出示例
-
-四个官方示例均 **可行**，且复查通过。完整数值见 `output/*.result.json`，配图见 `output/*.png`。
+四个官方示例均 **可行**。完整数值见 `output/*.result.json`。
 
 ### example1.json
 
 斜墙房间、外开门、含制冰机。全部贴墙且互不重叠；冰箱开门朝室内，离地架单独占墙段。
+
+![example1](output/example1.png)
 
 ```json
 {
@@ -128,6 +118,8 @@ python main.py example3.json --no-viz
 
 近矩形房间、外开门。货架与离地架分占各边，冰箱贴顶墙、开门朝室内，门洞留空。
 
+![example2](output/example2.png)
+
 ```json
 {
   "feasible": true,
@@ -147,6 +139,8 @@ python main.py example3.json --no-viz
 ### example3.json
 
 狭长房间、**内开门**（红色 N×N 扇区）。冰箱在加宽上部，货架与离地架贴墙且互不重叠，不进入门扇。
+
+![example3](output/example3.png)
 
 ```json
 {
@@ -169,6 +163,8 @@ python main.py example3.json --no-viz
 
 带凹槽的房间、外开门。冰箱与货架贴左墙，离地架贴顶墙/右墙，彼此不重叠。
 
+![example4](output/example4.png)
+
 ```json
 {
   "feasible": true,
@@ -182,9 +178,3 @@ python main.py example3.json --no-viz
   }
 }
 ```
-
----
-
-## 5. 提交
-
-将本目录上传到个人 GitHub 仓库后，把仓库链接发给招聘方即可。请勿把虚拟环境或 `__pycache__` 一并提交。
